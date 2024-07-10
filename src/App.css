@@ -53,6 +53,7 @@ body:has(.switch__input:checked) {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
+  
 }
 .switch__icon {
 	color: hsla(var(--hue),10%,80%);
@@ -121,6 +122,7 @@ body:has(.switch__input:checked) {
 	transition:
 		background-color var(--trans-dur),
 		box-shadow var(--trans-dur);
+    border: 2px solid #111;
 }
 .switch__input:checked {
 	background-color: hsl(var(--hue),10%,10%);
