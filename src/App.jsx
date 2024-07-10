@@ -5,24 +5,18 @@ import {useState} from "react";
 
 function App() {
 const [ name, setName] = useState("Mohamed");
-const [ age , setAge]  = useState(28);
-
+const [ age , setAge]  = useState(43);
 const [count, setCount] = useState(0);
-const [subtraction, setSubtraction] = useState(count);
 const [theme, setTheme] = useState("light")
 
 const changeAge = () => {
-  setAge(33)
+  setAge(34)
 }
 
 const addCount = () => { 
   setCount(count + 1) ;
  }
 
- const changeSubtraction = () => {
-  addCount
-  setSubtraction( count - 1)
- }
 
   return (
     <div className={`App ${theme}`}>
@@ -176,22 +170,23 @@ const addCount = () => {
         <button  onClick ={() =>{setTheme("grey")}} style={{marginRight: "26px"}}>grey</button>
         <button  onClick ={() =>{setTheme("pink")}}>pink</button>
         <h2>My name is {name} </h2>
-        <button onClick={ ()=>{ setName("Khalifa")} } >Change name</button>
+        <button onClick={ ()=>{ setName("Mohamed Khalifa")} } >Change name</button>
+        <button onClick={ ()=>{ setName("Mohamed")} } style={{marginLeft: "20px"}} >Reset name</button>
       </div>
 
       <div>
         <h2> My age is {age}</h2>
         <button onClick={ changeAge }>Change age</button>
+        <button onClick={ ()=> {setAge(43)} } style={{marginLeft:"20px"}}>Reset age</button>
       </div>
 
       <div>
-        <br/>
-        <button onClick={addCount}> Count {count} </button>
+        <h2>{count} </h2>
+        <button onClick={addCount}> Count  </button>
       </div>
 
       <div>
-        <br/>
-        <button onClick={changeSubtraction}> Subtraction {subtraction} </button>
+        <button onClick={()=> {setCount(count - 1)}}> Subtraction  </button>
       </div>
 
     </div>
